@@ -1,0 +1,43 @@
+{
+  "name": "Sabina Weisbergerová - PSYCH-K® Facilitátorka",
+  "short_name": "Sabina PSYCH-K®",
+  "description": "Profesionální transformace podvědomých bloků metodou PSYCH-K®",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdfcfb",
+  "theme_color": "#d4669f",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "cs",
+  "categories": ["health", "medical", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kontakt",
+      "short_name": "Kontakt",
+      "description": "Kontaktujte mě",
+      "url": "/#contact",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Služby",
+      "short_name": "Služby",
+      "description": "Mé služby",
+      "url": "/#services",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}
