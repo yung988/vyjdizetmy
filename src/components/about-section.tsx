@@ -10,7 +10,7 @@ export function AboutSection() {
     triggerOnce: true
   })
   return (
-    <section id="about" className="w-full py-16 bg-gradient-to-br from-emerald-50 via-background to-emerald-100/50 relative overflow-hidden" ref={ref}>
+    <section id="about" className="w-full py-20 bg-gradient-to-br from-emerald-50 via-background to-emerald-100/50 relative overflow-hidden" ref={ref}>
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-32 h-32 bg-emerald-200 rounded-full blur-3xl"></div>
@@ -38,8 +38,8 @@ export function AboutSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </motion.div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground">O Sabině Weisbergerové</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <h2 className="text-[32px] lg:text-[36px] font-bold text-foreground">O Sabině Weisbergerové</h2>
+            <p className="text-[16px] leading-[1.6] text-muted-foreground max-w-[680px]">
               Jmenuji se Sabina Weisbergerová a jsem certifikovanou facilitátorkou metody PSYCH-K®. Mým posláním je
               pomáhat lidem objevovat cestu z temnoty svých bloků k vnitřní svobodě, radosti a novému životnímu elánu.
             </p>
@@ -109,7 +109,7 @@ export function AboutSection() {
          >
            <div className="grid md:grid-cols-2 gap-8 items-center">
              <div>
-               <h3 className="text-2xl font-bold mb-6">Můj příběh transformace</h3>
+               <h3 className="text-[20px] lg:text-[24px] font-bold mb-6">Můj příběh transformace</h3>
                <p className="text-lg text-muted-foreground mb-6">
                  Sama jsem si prošla obdobím vyhoření, ale PSYCH-K® mi vrátil energii už po prvním sezení.
                  Tato zkušenost mě inspirovala k pomoci ostatním najít jejich cestu k uzdravení.

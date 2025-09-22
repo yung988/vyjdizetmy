@@ -12,24 +12,33 @@ import { Footer } from "@/components/footer"
 import { SidebarContent } from "@/components/sidebar-content"
 import { FloatingCTA } from "@/components/floating-cta"
 import { SmoothScroll } from "@/components/smooth-scroll"
-import { ScrollProgress } from "@/components/scroll-progress"
+import { Container } from "@/components/ui/container"
+import { HowWeWork } from "@/components/how-we-work"
+import { BlogPreview } from "@/components/blog-preview"
+import { PartnersSection } from "@/components/partners-section"
+import { QuickContact } from "@/components/quick-contact"
+import { FAQSection } from "@/components/faq-section"
 
 export default function Home() {
   return (
     <>
-      <ScrollProgress />
       <SmoothScroll>
         <div className="min-h-screen bg-background">
           <Header />
 
-        <main className="relative max-w-7xl mx-auto px-6 py-8">
+        <main className="relative py-8">
+          <Container>
           <div className="grid lg:grid-cols-4 gap-8">
             {/* Main content */}
             <div className="lg:col-span-3 space-y-16 pb-20 lg:pb-0">
               <HeroSection />
+              <QuickContact />
               <AboutSection />
+              <HowWeWork />
               <StatsSection />
               <Services />
+              <PartnersSection />
+              <BlogPreview />
               <div className="py-16">
                 <div className="text-center mb-12">
                   <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -42,6 +51,7 @@ export default function Home() {
                 <InteractiveQuiz />
               </div>
               <TestimonialsSection />
+              <FAQSection />
               <Contact />
             </div>
 
@@ -52,6 +62,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+          </Container>
         </main>
 
         <Footer />

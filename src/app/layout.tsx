@@ -211,7 +211,9 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <ScrollProgress />
-        {children}
+        <div id="main">
+          {children}
+        </div>
 
         {/* Skip to main content for accessibility */}
         <a

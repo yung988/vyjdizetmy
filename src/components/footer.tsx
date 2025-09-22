@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import site from "@/content/site.json"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -48,8 +49,8 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-gradient-soft border-t border-border mt-16">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+    <footer className="mt-16" style={{ backgroundColor: "#111" }}>
+      <div className="max-w-7xl mx-auto px-6 py-12 text-white">
         {/* Main footer content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand section */}
@@ -59,12 +60,12 @@ export function Footer() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <div className="w-4 h-4 bg-white rounded-full"></div>
+              <div className="w-8 h-8 bg-[var(--accent-mint)] rounded-full flex items-center justify-center">
+                <div className="w-4 h-4 bg-[#111] rounded-full"></div>
               </div>
-              <span className="font-semibold text-lg">Sabina Weisbergerová</span>
+              <span className="font-semibold text-lg text-white">{site.brandName}</span>
             </div>
-            <p className="text-muted-foreground text-sm mb-4">
+            <p className="text-white/70 text-sm mb-4">
               Certifikovaná facilitátorka metody PSYCH-K®. Pomáhám lidem najít cestu k vnitřnímu klidu a transformaci.
             </p>
             <div className="flex space-x-4">
@@ -72,7 +73,7 @@ export function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-white/70 hover:text-[var(--accent-mint)] transition-colors"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -87,13 +88,13 @@ export function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h3 className="font-semibold text-foreground mb-4">Služby</h3>
+            <h3 className="font-semibold text-white mb-4">Služby</h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    className="text-white/70 hover:text-[var(--accent-mint)] transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -108,13 +109,13 @@ export function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="font-semibold text-foreground mb-4">O webu</h3>
+            <h3 className="font-semibold text-white mb-4">O webu</h3>
             <ul className="space-y-2">
               {footerLinks.about.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    className="text-white/70 hover:text-[var(--accent-mint)] transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -129,19 +130,19 @@ export function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className="font-semibold text-foreground mb-4">Kontakt</h3>
+            <h3 className="font-semibold text-white mb-4">Kontakt</h3>
             <div className="space-y-3 text-sm">
               <div>
-                <p className="text-muted-foreground">Email</p>
-                <p className="text-foreground">info@vyjdizetmy.cz</p>
+                <p className="text-white/70">Email</p>
+                <p className="text-white">{site.contact.email}</p>
               </div>
               <div>
-                <p className="text-muted-foreground">Telefon</p>
-                <p className="text-foreground">+420 777 123 456</p>
+                <p className="text-white/70">Telefon</p>
+                <p className="text-white">{site.contact.phone}</p>
               </div>
               <div>
-                <p className="text-muted-foreground">Lokace</p>
-                <p className="text-foreground">Vysočina / Online</p>
+                <p className="text-white/70">Lokace</p>
+                <p className="text-white">{site.contact.location}</p>
               </div>
             </div>
           </motion.div>
@@ -149,15 +150,15 @@ export function Footer() {
 
         {/* Newsletter signup */}
         <motion.div
-          className="card-soft p-6 mb-8"
+          className="p-6 mb-8 rounded-[16px] border border-white/10 bg-white/5"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
-              <h4 className="font-semibold text-primary mb-1">Tipy pro osobní rozvoj</h4>
-              <p className="text-muted-foreground text-sm">
+              <h4 className="font-semibold text-white mb-1">Tipy pro osobní rozvoj</h4>
+              <p className="text-white/70 text-sm">
                 Přihlaste se k odběru newsletteru s praktickými tipy
               </p>
             </div>
@@ -165,9 +166,9 @@ export function Footer() {
               <input
                 type="email"
                 placeholder="Váš email"
-                className="px-3 py-2 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary flex-1 md:w-48"
+                className="px-3 py-2 border border-white/20 rounded-md bg-transparent text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[var(--accent-mint)] flex-1 md:w-48"
               />
-              <Button className="btn-primary whitespace-nowrap">
+              <Button className="bg-white text-[#111] hover:bg-white/90 whitespace-nowrap">
                 Přihlásit
               </Button>
             </div>
@@ -176,20 +177,20 @@ export function Footer() {
 
         {/* Bottom section */}
         <motion.div
-          className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border"
+          className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} Sabina Weisbergerová. Všechna práva vyhrazena.
+          <p className="text-sm text-white/70">
+            © {currentYear} {site.brandName}. Všechna práva vyhrazena.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">
             {footerLinks.legal.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm text-white/70 hover:text-[var(--accent-mint)] transition-colors"
               >
                 {link.name}
               </a>
@@ -199,12 +200,12 @@ export function Footer() {
 
         {/* Certifications */}
         <motion.div
-          className="text-center mt-8 pt-8 border-t border-border"
+          className="text-center mt-8 pt-8 border-t border-white/10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-white/60">
             Certifikovaná facilitátorka PSYCH-K® International • Registrovaná v České republice
           </p>
         </motion.div>

@@ -48,13 +48,13 @@ export function StatsSection() {
   }, [])
 
   return (
-    <section className="w-full py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
+    <section id="results" className="w-full py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-[32px] lg:text-[36px] font-bold text-foreground mb-6">
             Výsledky, které mluví za vše
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-[16px] leading-[1.6] text-muted-foreground max-w-[680px] mx-auto">
             Reálná data z více než 10 let praxe s metodou PSYCH-K®
           </p>
         </div>
@@ -88,7 +88,7 @@ export function StatsSection() {
                   config={{
                     success: {
                       label: "Úspěšnost",
-                      color: "#8b5a8c",
+                      color: "var(--chart-1)",
                     },
                   }}
                   className="w-full h-full"
@@ -97,8 +97,8 @@ export function StatsSection() {
                     <Area
                       type="monotone"
                       dataKey="value"
-                      stroke="#8b5a8c"
-                      fill="#8b5a8c"
+                      stroke="var(--chart-1)"
+                      fill="var(--chart-1)"
                       fillOpacity={0.3}
                       strokeWidth={3}
                     />
@@ -171,7 +171,7 @@ export function StatsSection() {
                   config={{
                     improvement: {
                       label: "Zlepšení (%)",
-                      color: "#8b5a8c",
+                      color: "var(--chart-1)",
                     },
                   }}
                   className="w-full h-full"
@@ -184,9 +184,9 @@ export function StatsSection() {
                     <Line
                       type="monotone"
                       dataKey="improvement"
-                      stroke="#8b5a8c"
+                      stroke="var(--chart-1)"
                       strokeWidth={3}
-                      dot={{ fill: "#8b5a8c", strokeWidth: 2, r: 6 }}
+                      dot={{ fill: "var(--accent-mint)", strokeWidth: 2, r: 6 }}
                       activeDot={{ r: 8, stroke: "#8b5a8c", strokeWidth: 2, fill: "#fff" }}
                     />
                   </LineChart>

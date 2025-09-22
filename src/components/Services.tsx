@@ -4,41 +4,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import servicesData from "@/content/services.json"
 
 export function Services() {
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true
   })
-  const services = [
-    {
-      title: "PSYCH-K® Individuální",
-      description: "Komplexní transformace podvědomých bloků. První změny už po prvním sezení - osvobození od strachů, úzkostí a limitujících přesvědčení.",
-      price: "1400 Kč",
-      duration: "75 min",
-      popular: true,
-      icon: "users",
-      theme: "primary"
-    },
-    {
-      title: "Online konzultace",
-      description: "Stejná účinnost jako osobní sezení, ale z pohodlí vašeho domova. Videohovor s plnou podporou a transformací.",
-      price: "1200 Kč",
-      duration: "60 min",
-      popular: false,
-      icon: "video",
-      theme: "secondary"
-    },
-    {
-      title: "Bachovy květové esence",
-      description: "Přírodní emoční podpora. Individuálně namíchané tinktury pro harmonizaci emocí a vnitřní rovnováhu.",
-      price: "450 Kč",
-      duration: "lahvička",
-      popular: false,
-      icon: "flower",
-      theme: "accent"
-    },
-  ]
+  const services = servicesData.services
 
   return (
     <section id="services" className="w-full py-16 bg-gradient-to-r from-blue-50 via-background to-blue-100/50 relative overflow-hidden" ref={ref}>

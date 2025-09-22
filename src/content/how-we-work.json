@@ -1,0 +1,7 @@
+{
+  "steps": [
+    { "num": 1, "title": "Krok 1: Úvodní konzultace", "desc": "Naslouchám, mapujeme téma a domluvíme další postup.", "img": "/sofiatherapy1.webp" },
+    { "num": 2, "title": "Krok 2: Proces PSYCH-K®", "desc": "Pracujeme s podvědomými přesvědčeními. Doba trvání 45–90 minut.", "img": "/sofiatherapy3.webp" },
+    { "num": 3, "title": "Krok 3: Integrace a podpora", "desc": "Domácí cvičení a možnost follow‑up setkání, aby změny pevně zakořenily.", "img": "/sofiatherapy4.webp" }
+  ]
+}

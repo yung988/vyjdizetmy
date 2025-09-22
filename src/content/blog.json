@@ -1,0 +1,29 @@
+{
+  "categories": ["Sebepéče", "Úzkost", "Vztahy", "Kariéra"],
+  "posts": [
+    {
+      "title": "Jak pracovat s úzkostí v každodenním životě",
+      "excerpt": "Praktické kroky a malé rituály, které přinášejí klid během pár minut…",
+      "img": "/sofiatherapy2.webp",
+      "date": "21. února, 2024",
+      "readTime": "5 min",
+      "tags": ["Úzkost", "PSYCH-K®"]
+    },
+    {
+      "title": "Co dělat, když se cítíte přetížení",
+      "excerpt": "Jednoduchý rámec 3 kroků: zklidnit tělo, přesměrovat pozornost, upravit přesvědčení.",
+      "img": "/sofiatherapy3.webp",
+      "date": "29. dubna, 2024",
+      "readTime": "4 min",
+      "tags": ["Sebepéče"]
+    },
+    {
+      "title": "Vztahy bez dramatu: jak změnit starý vzorec",
+      "excerpt": "Změna podvědomého přesvědčení je často rychlejší než dlouhé rozebírání minulosti.",
+      "img": "/sofiatherapy4.webp",
+      "date": "5. května, 2024",
+      "readTime": "6 min",
+      "tags": ["Vztahy", "Mindset"]
+    }
+  ]
+}

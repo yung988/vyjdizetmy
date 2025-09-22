@@ -1,0 +1,10 @@
+{
+  "testimonials": [
+    {"name":"Marie K.","location":"Praha","text":"PSYCH-K® mi změnilo život. Poprvé cítím vnitřní klid a energii, kterou jsem považovala za ztracenou.","rating":5,"result":"Překonala úzkosti během 3 sezení","avatar":"MK"},
+    {"name":"Petr M.","location":"Brno","text":"Vyhoření mě dohnalo až na dno. Díky PSYCH-K® jsem našel znovu svou motivaci a životní radost.","rating":5,"result":"Obnovil pracovní energii","avatar":"PM"},
+    {"name":"Jana S.","location":"Vysočina","text":"Bachovy esence mi pomohly najít klid, který jsem předtím marně hledala. Doporučuji každému.","rating":5,"result":"Zlepšila emoční stabilitu","avatar":"JS"},
+    {"name":"Tomáš V.","location":"Ostrava","text":"Po letech bojů s depresí jsem konečně našel metodu, která funguje. PSYCH-K® mi dal nový pohled na život.","rating":5,"result":"Překonal depresi za 4 týdny","avatar":"TV"},
+    {"name":"Lucie H.","location":"Plzeň","text":"Online terapie byla pro mě perfektní volba. Cítila jsem se bezpečně a výsledky přišly rychle.","rating":5,"result":"Vyřešila vztahové problémy","avatar":"LH"},
+    {"name":"Michal R.","location":"Liberec","text":"Kombinace PSYCH-K® a Bachových esencí mi pomohla najít harmonii mezi tělem a duší.","rating":5,"result":"Dosáhl vnitřní rovnováhy","avatar":"MR"}
+  ]
+}

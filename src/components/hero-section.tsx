@@ -1,7 +1,11 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { AnimatedCounter } from "./animated-counter"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import site from "@/content/site.json"
 
 export function HeroSection() {
   return (
@@ -28,63 +32,75 @@ export function HeroSection() {
             {/* Modern typography */}
             <div className="space-y-6">
               <motion.h1
-                className="text-5xl lg:text-6xl font-bold tracking-tight leading-tight"
+                className="text-[48px] lg:text-[56px] font-bold tracking-tight leading-[1.08]"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <motion.span
-                  className="block text-sage"
+                  className="block"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  Najděte cestu
+                  {site.hero.heading1} <em className="not-italic"> </em>
                 </motion.span>
                 <motion.span
-                  className="block text-gradient"
+                  className="block"
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                 >
-                  k vnitřnímu klidu
+                  <em className="italic text-[var(--accent-mint)]">{site.hero.heading2}</em>
                 </motion.span>
               </motion.h1>
               <motion.p
-                className="text-lg lg:text-xl text-muted-foreground max-w-lg leading-relaxed"
+                className="text-[16px] lg:text-[18px] text-muted-foreground max-w-[680px] leading-[1.6]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                Transformujte své podvědomí metodou PSYCH-K® a objevte život bez limitů
+                {site.hero.subheading}
               </motion.p>
             </div>
 
-            {/* Modern CTA buttons */}
+            {/* CTA buttons per brief */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 pt-8"
+              className="flex flex-col sm:flex-row gap-3 pt-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
             >
               <motion.button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-primary group relative px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold text-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                aria-label="Začít transformaci - přejít na kontaktní formulář"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="relative z-10">Začít transformaci</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </motion.button>
-              <motion.button
-                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 border-2 border-primary/30 text-primary rounded-full font-semibold text-lg hover:bg-primary/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                aria-label="Zjistit více o metodě - přejít na sekci o mně"
-                whileHover={{ scale: 1.02 }}
+                className="btn-primary px-6 py-3 bg-[var(--primary)] text-[var(--primary-foreground)] rounded-[20px] font-semibold text-base"
+                aria-label="Objednat konzultaci"
+                whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
-                O metodě
+                {site.hero.primaryCta}
+              </motion.button>
+              {/* Secondary CTA switches by breakpoint */}
+              {/* Mobile: Zjistit víc (scroll to about) */}
+              <motion.button
+                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                className="sm:hidden px-6 py-3 rounded-[20px] font-semibold text-base bg-[var(--accent-mint)] text-[#113322] hover:opacity-90 transition"
+                aria-label="Zjistit víc"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Zjistit víc
+              </motion.button>
+              {/* Desktop: WhatsApp */}
+              <motion.button
+                onClick={() => window.open('https://wa.me/', '_blank')}
+                className="hidden sm:inline-flex px-6 py-3 rounded-[20px] font-semibold text-base bg-[var(--accent-mint)] text-[#113322] hover:opacity-90 transition items-center gap-2"
+                aria-label="Kontaktovat přes WhatsApp"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0012 0C5.4 0 0 5.4 0 12a11.86 11.86 0 003.48 8.52L2.4 24l3.6-1.08A11.86 11.86 0 0012 24c6.6 0 12-5.4 12-12 0-3.18-1.32-6.24-3.48-8.52zM12 22.08a10.08 10.08 0 01-5.16-1.44l-.36-.24-2.16.66.66-2.1-.24-.36A10.08 10.08 0 1122.08 12 10.08 10.08 0 0112 22.08zm5.64-7.38c-.3-.12-1.74-.84-2.01-.93-.27-.09-.45-.12-.63.12-.18.24-.72.93-.9 1.11-.18.18-.33.21-.63.09-.3-.12-1.26-.45-2.4-1.44-.9-.81-1.5-1.8-1.68-2.1-.18-.3 0-.45.12-.57.12-.12.27-.33.39-.51.12-.18.18-.3.27-.51.09-.24.03-.45-.03-.63-.06-.18-.63-1.5-.87-2.04-.24-.57-.48-.48-.66-.48h-.57c-.18 0-.45.06-.69.33-.24.24-.9.87-.9 2.1 0 1.23.93 2.43 1.05 2.61.12.18 1.83 2.79 4.44 3.9 2.61 1.11 2.61.75 3.09.72.48-.03 1.5-.6 1.71-1.17.21-.57.21-1.05.15-1.17-.06-.12-.24-.18-.54-.3z"/></svg>
+                {site.hero.secondaryCta}
               </motion.button>
             </motion.div>
 
@@ -106,65 +122,59 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Pravá strana - vizuální prvky */}
+          {/* Pravá strana - fotokarta s "tag" štítky (inspirováno referenčními obrázky) */}
           <div className="relative">
-            {/* Trust badges a stats */}
             <motion.div
-              className="space-y-8"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
+              className="relative rounded-3xl overflow-hidden border border-border bg-card shadow-xl"
             >
-              {/* Trust badges */}
-              <motion.div
-                className="flex flex-wrap gap-3"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                <div className="bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary border border-primary/20">
-                  PSYCH-K® Certified
-                </div>
-                <div className="bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-secondary border border-secondary/20">
-                  10+ let praxe
-                </div>
-              </motion.div>
+              <div className="aspect-[4/5] w-full">
+                <Image
+                  src="/sofiatherapy4.webp"
+                  alt="Sabina Weisbergerová – facilitátorka PSYCH-K®"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
 
-              {/* Stats cards */}
-              <motion.div
-                className="grid grid-cols-1 gap-4"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-              >
-                <motion.div
-                  className="card-soft p-6 text-center"
-                  whileHover={{ y: -5, scale: 1.02 }}
+              {/* Horní pravý roh: pilulka Book now */}
+              <div className="absolute top-4 right-4">
+                <Button
+                  variant="pill"
+                  size="sm"
+                  className="bg-card/80 backdrop-blur-md border border-border text-foreground hover:bg-card/90"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  <div className="text-3xl font-bold text-primary mb-1">
-                    <AnimatedCounter end={500} suffix="+" />
+                  Book now
+                </Button>
+              </div>
+
+              {/* Plovoucí tagy */}
+              <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                <Badge variant="outline" className="bg-white/70 backdrop-blur-sm">✨ Průzkum</Badge>
+                <Badge variant="outline" className="bg-white/70 backdrop-blur-sm">🌱 Růst</Badge>
+                <Badge variant="outline" className="bg-white/70 backdrop-blur-sm">💖 Healing</Badge>
+              </div>
+
+              {/* Spodní rating karta */}
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[85%]">
+                <div className="card-soft px-4 py-3 rounded-2xl border bg-white/90 backdrop-blur-md flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="flex text-yellow-500">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.217 3.744a1 1 0 00.95.69h3.938c.776 0 1.101.994.472 1.45l-3.181 2.31a1 1 0 00-.363 1.118l1.217 3.744c.3.922-.756 1.688-1.539 1.118l-3.18-2.31a1 1 0 00-1.176 0l-3.18 2.31c-.783.57-1.839-.196-1.539-1.118l1.217-3.744a1 1 0 00-.363-1.118L2.423 8.81c-.629-.456-.304-1.45.472-1.45h3.938a1 1 0 00.95-.69l1.217-3.744z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <span className="text-sm font-medium text-foreground">200+ hodnocení</span>
                   </div>
-                  <div className="text-sm text-muted-foreground">Spokojených klientů</div>
-                </motion.div>
-                <motion.div
-                  className="card-soft p-6 text-center"
-                  whileHover={{ y: -5, scale: 1.02 }}
-                >
-                  <div className="text-3xl font-bold text-secondary mb-1">
-                    <AnimatedCounter end={95} suffix="%" />
-                  </div>
-                  <div className="text-sm text-muted-foreground">Úspěšnost transformace</div>
-                </motion.div>
-                <motion.div
-                  className="card-soft p-6 text-center"
-                  whileHover={{ y: -5, scale: 1.02 }}
-                >
-                  <div className="text-3xl font-bold text-sage mb-1">
-                    <AnimatedCounter end={10} suffix="+" />
-                  </div>
-                  <div className="text-sm text-muted-foreground">Let zkušeností</div>
-                </motion.div>
-              </motion.div>
+                  <Button size="sm" className="btn-primary px-3 py-1 text-sm">Rezervovat</Button>
+                </div>
+              </div>
             </motion.div>
           </div>
         </motion.div>

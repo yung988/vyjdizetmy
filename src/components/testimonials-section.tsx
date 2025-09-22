@@ -5,57 +5,11 @@ import { AnimatedCounter } from "./animated-counter"
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 
+import testimonialsData from "@/content/testimonials.json"
+
 export function TestimonialsSection() {
-  const testimonials = [
-    {
-      name: "Marie K.",
-      location: "Praha",
-      text: "PSYCH-K® mi změnilo život. Poprvé cítím vnitřní klid a energii, kterou jsem považovala za ztracenou.",
-      rating: 5,
-      result: "Překonala úzkosti během 3 sezení",
-      avatar: "MK"
-    },
-    {
-      name: "Petr M.",
-      location: "Brno",
-      text: "Vyhoření mě dohnalo až na dno. Díky PSYCH-K® jsem našel znovu svou motivaci a životní radost.",
-      rating: 5,
-      result: "Obnovil pracovní energii",
-      avatar: "PM"
-    },
-    {
-      name: "Jana S.",
-      location: "Vysočina",
-      text: "Bachovy esence mi pomohly najít klid, který jsem předtím marně hledala. Doporučuji každému.",
-      rating: 5,
-      result: "Zlepšila emoční stabilitu",
-      avatar: "JS"
-    },
-    {
-      name: "Tomáš V.",
-      location: "Ostrava",
-      text: "Po letech bojů s depresí jsem konečně našel metodu, která funguje. PSYCH-K® mi dal nový pohled na život.",
-      rating: 5,
-      result: "Překonal depresi za 4 týdny",
-      avatar: "TV"
-    },
-    {
-      name: "Lucie H.",
-      location: "Plzeň",
-      text: "Online terapie byla pro mě perfektní volba. Cítila jsem se bezpečně a výsledky přišly rychle.",
-      rating: 5,
-      result: "Vyřešila vztahové problémy",
-      avatar: "LH"
-    },
-    {
-      name: "Michal R.",
-      location: "Liberec",
-      text: "Kombinace PSYCH-K® a Bachových esencí mi pomohla najít harmonii mezi tělem a duší.",
-      rating: 5,
-      result: "Dosáhl vnitřní rovnováhy",
-      avatar: "MR"
-    }
-  ]
+  // Load testimonials from JSON
+  const testimonials = testimonialsData.testimonials
 
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -74,7 +28,7 @@ export function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonials" className="w-full py-16 bg-gradient-to-br from-amber-50 via-background to-amber-100/50 relative overflow-hidden">
+    <section id="testimonials" className="w-full py-20 bg-gradient-to-br from-amber-50 via-background to-amber-100/50 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-16 left-16 w-36 h-36 bg-amber-200 rounded-full blur-3xl"></div>
@@ -91,7 +45,7 @@ export function TestimonialsSection() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
           </motion.div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-[28px] lg:text-[36px] font-bold text-foreground mb-4">
             Co říkají klienti
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

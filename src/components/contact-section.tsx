@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import site from "@/content/site.json"
 
 export function ContactSection() {
   const { ref, inView } = useInView({
@@ -91,7 +92,7 @@ export function ContactSection() {
         </svg>
       ),
       title: "Telefon",
-      value: "+420 777 123 456",
+      value: site.contact.phone,
       description: "Volat nejlépe mezi 9-17 hod"
     },
     {
@@ -101,7 +102,7 @@ export function ContactSection() {
         </svg>
       ),
       title: "Email",
-      value: "info@vyjdizetmy.cz",
+      value: site.contact.email,
       description: "Odpovím do 24 hodin"
     },
     {
@@ -112,7 +113,7 @@ export function ContactSection() {
         </svg>
       ),
       title: "Lokace",
-      value: "Vysočina / Online",
+      value: site.contact.location,
       description: "Osobně nebo přes internet"
     }
   ]
